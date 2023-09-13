@@ -36,7 +36,7 @@ public class CookieScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.KeypadEnter))
         {
-            Invoke(Fisk(), 1);
+            //Invoke(Fisk(), 1);
         }
     }
 
