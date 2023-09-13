@@ -33,15 +33,5 @@ public class CookieScript : MonoBehaviour
             numberClicks++;
             Logic.AddScore(1);
         }
-
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            //Invoke(Fisk(), 1);
-        }
-    }
-
-    public void Fisk()
-    {
-        Logic.Fiskeri();
     }
 }

@@ -26,9 +26,4 @@ public class LogicScript : MonoBehaviour
     {
         Worker_1.SetActive(true);
     }
-
-    public void Fiskeri()
-    {
-        NumberText.text = "Dette er en test";
-    }
 }

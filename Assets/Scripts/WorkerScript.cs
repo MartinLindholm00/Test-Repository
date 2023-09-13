@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class WorkerScript : MonoBehaviour
 {
-    //private bool onOrOff = false;
-
-    private int timer = 1;
-
     private LogicScript logic;
 
     private int level = 1;
@@ -16,19 +12,19 @@ public class WorkerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        logic = GameObject.FindGameObjectWithTag("LogicTag").GetComponent<LogicScript>();
+     
+        InvokeRepeating("working", 1, 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        logic = GameObject.FindGameObjectWithTag("LogicTag").GetComponent<LogicScript>();
 
-        for (int i = 0; i < 100; i ++) 
-        {
-            //Invoke(logic.AddScore(level), 1);
-            
-        }
+    }
 
+    void working ()
+    {
+        logic.AddScore(level);
     }
 }
