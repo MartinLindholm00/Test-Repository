@@ -11,6 +11,10 @@ public class CookieScript : MonoBehaviour
     private LogicScript Logic;
     private WorkerScript worker_1;
 
+    public float turnspeed = 50f;
+
+    private bool Light = true;
+
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +36,24 @@ public class CookieScript : MonoBehaviour
         {
             numberClicks++;
             Logic.AddScore(1);
+            Logic.LightSwitch(Light);
+            LightOnOff();
+        }
+
+        transform.Rotate(Vector3.right, turnspeed * Time.deltaTime);
+    }
+
+    public void LightOnOff()
+    {
+        if (Light == true) 
+        {
+            Logic.LightSwitch(true);
+            Light = false;
+        }
+        else
+        {
+            Logic.LightSwitch(false);
+            Light = true;
         }
     }
 }
